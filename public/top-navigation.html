@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md" style="background-color: rgb(70, 42, 0)">
-    <a class="navbar-brand" href="index.html" style="color: white; font-size:30px">
+    <a class="navbar-brand" href="login.html" style="color: white; font-size:30px">
         <img src="images/logo.png" width="40" height="40" class="d-inline-block align-top" alt=""> BookHaven
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -28,26 +28,9 @@
             <li class="nav-item active" id="storyMenu">
                 <a class="nav-link" href="#" id="story" onClick="listNovelBooks()" style="color: white;">Novel</a>
             </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item" id="registerMenu">
-                <a class="nav-link" href="#" id="register" data-toggle="modal" data-target="#registerModal" style="color: white;">
-                    Register
-                </a>
-            </li>
             <li class="nav-item" id="loginMenu">
-                <a class="nav-link" href="#" id="login" data-toggle="modal" data-target="#loginModal" style="color: white;">
-                    Login
-                </a>
+                <a class="nav-link" href="https://bookhaven-auth.auth.us-east-1.amazoncognito.com/logout?client_id=7p5c3ve2dhvfd8kpipj64fltvo&logout_uri=http://localhost:8080/index.html" style="color: white;">Logout</a>
             </li>
-            <li class="nav-item" id="logoutMenu" style="display:none">
-                <a class="nav-link" href="#" id="logout" onclick="logoutMe();" style="color: white;">
-                    Log Out
-                </a>
-            </li>
-            <li class="nav-item" id="updateMenu" style="display:none;">
-                <a class="nav-link" href="update-profile.html" id="update" style="color: white;">
-                    Update Profile </a>
         </ul>
     </div>
 </nav>
