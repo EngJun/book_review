@@ -1,14 +1,14 @@
 var mysql = require("mysql");
 var connection = mysql.createConnection({
-    host:'localhost',
+    host:'projectdatabase.cqfpkqfsbguf.us-east-1.rds.amazonaws.com',
     port:'3306',
-    user:'root',
-    password:'cdev',
+    user:'admin',
+    password:'ProjectPassword',
     database:'book_review'
 });
 
 connection.connect(err => {
     if (err) throw err;
-    console.log('Connected To DB');
+    console.log('Connected To AWS DB');
 });
 module.exports = connection;
