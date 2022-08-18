@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project: Heart Disease/Attack Predictor</title>
+    <style>
+        h1 {text-align: center;}
+        h2 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+        form {text-align: center;}
+    </style>
+</head>
+
+<body background = "https://i.ibb.co/6b3XQjb/background.jpg">
+    <h1>Heart Disease/Attack Prediction</h1>
+    <h2>There are a number of factors that can be risk factors to developing heart disease, this website will be able to predict if your body is prone to it</h2><p>
+    <h2>{{ heartdiseaseorattack_prediction }}</h2>
+    <p>0 = Low risk    1 = High risk</p>
+    <form action="/predict" method="post">
+        <p>Do you have high blood pressure?</p>
+            <input type="radio" id="HighBP" name="HighBP" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="HighBP" name="HighBP" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Do you have high cholesterol?</p>
+            <input type="radio" id="HighChol" name="HighChol" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="HighChol" name="HighChol" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Do you check your cholesterol levels?</p>
+            <input type="radio" id="CholCheck" name="CholCheck" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="CholCheck" name="CholCheck" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>What is your BMI?</p>
+        <input type="number" name="BMI" placeholder="BMI" required><br>
+        <br>
+        <p>Do you smoke?</p>
+            <input type="radio" id="Smoker" name="Smoker" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="Smoker" name="Smoker" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Have you had a stroke before?</p>
+            <input type="radio" id="Stroke" name="Stroke" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="Stroke" name="Stroke" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Do you have diabetes?</p>
+            <input type="radio" id="Diabetes" name="Diabetes" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="Diabetes" name="Diabetes" value="1">
+            <label for="1">Pre-diabetes</label>
+            <input type="radio" id="Diabetes" name="Diabetes" value="2">
+            <label for="2">Yes</label><br>
+        <br>
+        <p>Do you do physical activities?</p>
+            <input type="radio" id="PhysActivity" name="PhysActivity" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="PhysActivity" name="PhysActivity" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Do you eat fruits?</p>
+            <input type="radio" id="Fruits" name="Fruits" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="Fruits" name="Fruits" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Do you eat veggies?</p>
+            <input type="radio" id="Veggies" name="Veggies" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="Veggies" name="Veggies" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Are you a heavy drinker(alcohol)?</p>
+            <input type="radio" id="HvyAlcoholConsump" name="HvyAlcoholConsump" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="HvyAlcoholConsump" name="HvyAlcoholConsump" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Have you had any form of healthcare?</p>
+            <input type="radio" id="AnyHealthcare" name="AnyHealthcare" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="AnyHealthcare" name="AnyHealthcare" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Rate your general health from 1(Worst) - 5(Best)</p>
+            <input type="radio" id="GenHlth" name="GenHlth" value="1">
+            <label for="1">1</label>
+            <input type="radio" id="GenHlth" name="GenHlth" value="2">
+            <label for="2">2</label>
+            <input type="radio" id="GenHlth" name="GenHlth" value="3">
+            <label for="3">3</label>
+            <input type="radio" id="GenHlth" name="GenHlth" value="4">
+            <label for="4">4</label>
+            <input type="radio" id="GenHlth" name="GenHlth" value="5">
+            <label for="5">5</label><br>
+        <br>
+        <p>Rate your mental health from 0(Best) to 30(Worst)</p>
+        <input type="number" name="MentHlth" placeholder="Mental Health" required><br>
+        <br>
+        <p>Rate your physical health from 0(Best) to 30(Worst)</p>
+        <input type="number" name="PhysHlth" placeholder="Physical Health" required><br>
+        <br>
+        <p>Do you have difficulty walking?</p>
+            <input type="radio" id="DiffWalk" name="DiffWalk" value="0">
+            <label for="0">No</label>
+            <input type="radio" id="DiffWalk" name="DiffWalk" value="1">
+            <label for="1">Yes</label><br>
+        <br>
+        <p>Gender</p>
+            <input type="radio" id="Sex" name="Sex" value="0">
+            <label for="0">Female</label>
+            <input type="radio" id="Sex" name="Sex" value="1">
+            <label for="1">Male</label><br>
+        <br>
+        <label for="Age">Age:</label>
+            <select placeholder="Age" name="Age">
+                <option value="1">18 to 24</option>
+                <option value="2">25 to 29</option>
+                <option value="3">30 to 34</option>
+                <option value="4">35 to 39</option>
+                <option value="5">40 to 44</option>
+                <option value="6">45 to 49</option>
+                <option value="7">50 to 54</option>
+                <option value="8">55 to 59</option>
+                <option value="9">60 to 64</option>
+                <option value="10">65 to 69</option>
+                <option value="11">70 to 74</option>
+                <option value="12">75 to 79</option>
+                <option value="13">80 or older</option>
+            </select>
+        <br>
+        <br>
+        <br>
+
+        <button type="submit">Predict Heart Disease/Attack</button>
+    </form>
+</body>
+</html>

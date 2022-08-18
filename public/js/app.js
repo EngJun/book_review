@@ -1,0 +1,10 @@
+var book_url = "/books";
+var book_array = [];
+var bookCount = 0;
+var category = "";
+var currentIndex = 0;
+var review_url = "/reviews";
+var review_array = []; // This creates an empty comment array
+var popcornBWImage = 'images/popcorn_bw.png';
+var popcornImage = 'images/popcorn.png';
+var rating = 0;
