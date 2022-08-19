@@ -8,3 +8,4 @@ var review_array = []; // This creates an empty comment array
 var popcornBWImage = 'images/popcorn_bw.png';
 var popcornImage = 'images/popcorn.png';
 var rating = 0;
+var login_url = "/login"
