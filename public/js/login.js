@@ -33,7 +33,7 @@ function sendEmail(){
     send.open("POST", sns, true);
     send.setRequestHeader("Content-type", "application/json");
     var userr = document.getElementById("usernameLogin").value;
-    var payload={"message": userr + "You Have Successfully Logged In."};
+    var payload={"message": userr + " Just Logged In."};
     send.send(JSON.stringify(payload));
     console.log(payload)
     send.onload = function () {
