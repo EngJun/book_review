@@ -1,6 +1,6 @@
 function registerMe(){
     var registerUser = new XMLHttpRequest();
-    registerUser.open("POST","18.212.8.244:3000/addProfile", true);
+    registerUser.open("POST","/addProfile", true);
     registerUser.setRequestHeader("Content-Type", "application/json");
     registerUser.onload=function(){
         console.log("ok");
