@@ -1,7 +1,7 @@
 function updateMe(){
     var updateUser = new XMLHttpRequest();
 
-    updateUser.open("PUT", "18.212.8.244:3000/updateProfile", true);
+    updateUser.open("PUT", "/updateProfile", true);
     updateUser.setRequestHeader("Content-Type", "application/json");
     updateUser.onload = function(){
         console.log("great");
