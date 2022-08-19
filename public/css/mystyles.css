@@ -11,7 +11,8 @@ footer{
 .body{
     align-items: center;
     text-align: center;
-}
+    justify-content: center;
+
 
 .weatherAPI{
     background: #000000d0;
