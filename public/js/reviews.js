@@ -127,17 +127,19 @@ function changePopcornImage(num, classTarget) {
     }
 }
 
-function editReview() {
+function editReview(element) {
     var token = sessionStorage.getItem("token");
     if ((token == null)) {
         alert("Please login to edit comments")
         window.location.href = "details.html"
     } else {
-        if (review_array[sessionStorage.getItem("index")].usernameFK == sessionStorage.getItem("token2")) {
-            document.getElementById("editnickname").value = review_array[sessionStorage.getItem("index")].usernameFK;
-            document.getElementById("edituserReviews").value = review_array[sessionStorage.getItem("index")].comment;
-            console.log(review_array[sessionStorage.getItem("index")].rating);
-            displayColorPopcorn('editpop', review_array[sessionStorage.getItem("index")].rating);
+        var item = element.getAttribute("item");
+        currentIndex = item;
+        if (review_array[currentIndex].usernameFK == sessionStorage.getItem("token2")) {
+            document.getElementById("editnickname").value = review_array[item].usernameFK;
+            document.getElementById("edituserReviews").value = review_array[item].comment;
+            console.log(review_array[item].rating);
+            displayColorPopcorn('editpop', review_array[item].rating);
             console.log(true);
         } else {
             alert("You can only edit your own comments");
@@ -172,17 +174,19 @@ function updateReview() {
     }
 }
 
-function deleteReview() {
+function deleteReview(element) {
     var token = sessionStorage.getItem("token");
     if (token == null) {
         alert("Please login to delete review");
         window.location.href = "details.html"
     } else {
-        if (review_array[sessionStorage.getItem("index")].usernameFK == sessionStorage.getItem("token2")) {
+        var item = element.getAttribute("item");
+        currentIndex = item;
+        if (review_array[currentIndex].usernameFK == sessionStorage.getItem("token2")) {
             var response = confirm("Are you sure you want to delete this comment?");
 
             if (response == true) {
-                var delete_review_url = review_url + "/" + review_array[sessionStorage.getItem("index")]._id;
+                var delete_review_url = review_url + "/" + review_array[item)]._id;
                 var eraseReview = new XMLHttpRequest();
                 eraseReview.open("DELETE", delete_review_url, true);
                 eraseReview.onload = function () {
