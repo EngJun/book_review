@@ -186,7 +186,7 @@ function deleteReview(element) {
             var response = confirm("Are you sure you want to delete this comment?");
 
             if (response == true) {
-                var delete_review_url = review_url + "/" + review_array[item)]._id;
+                var delete_review_url = review_url + "/" + review_array[item]._id;
                 var eraseReview = new XMLHttpRequest();
                 eraseReview.open("DELETE", delete_review_url, true);
                 eraseReview.onload = function () {
