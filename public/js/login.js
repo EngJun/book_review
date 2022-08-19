@@ -1,6 +1,6 @@
 function loginMe(){
     var loginUser = new XMLHttpRequest();
-    loginUser.open("POST","18.212.8.244:3000/login", true);
+    loginUser.open("POST",login_url, true);
     loginUser.setRequestHeader("Content-Type", "application/json");
     loginUser.onload=function(){
         var token = JSON.parse(loginUser.responseText);
