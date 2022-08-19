@@ -7,3 +7,28 @@ footer{
     float: right;
     padding-right: 10px;
 }
+
+.body{
+    align-items: center;
+    text-align: center;
+}
+
+.weatherAPI{
+    background: #000000d0;
+    color: white;
+    padding: 2em;
+    border-radius: 2em;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+}
+
+input.search-bar{
+    border: none;
+    outline:none;
+    padding: 0.5em 1em;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 120%;
+}
