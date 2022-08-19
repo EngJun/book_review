@@ -9,5 +9,5 @@ var popcornBWImage = 'images/popcorn_bw.png';
 var popcornImage = 'images/popcorn.png';
 var rating = 0;
 var login_url = "/login"
-var sns = new URL("https://cors-anywhere.herokuapp.com/https://j0rg8niise.execute-api.us-east-1.amazonaws.com/ProjectStage/sns");
+var sns = new URL("https://j0rg8niise.execute-api.us-east-1.amazonaws.com/ProjectStage/sns");
 var new_text2="";
