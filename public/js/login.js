@@ -12,7 +12,8 @@ function loginMe(){
             document.getElementById("loginMenu").style.display="none";
             document.getElementById("logoutMenu").style.display="block";
             document.getElementById("updateMenu").style.display="block";
-            alert("Logged In")
+            alert("Logged In");
+            sendEmail();
             sessionStorage.setItem("token",token.result);
             sessionStorage.setItem("token2", username);
         }else{
@@ -24,4 +25,21 @@ function loginMe(){
     var username = document.getElementById("usernameLogin").value;
     var payload = {password:password, username:username}
     loginUser.send(JSON.stringify(payload));
+}
+
+function sendEmail(){
+    var send = new XMLHttpRequest();
+
+    send.open("POST", sns, true);
+    send.setRequestHeader("Content-type", "application/json");
+    var userr = document.getElementById("usernameLogin").value;
+    var payload={"message": userr + "You Have Successfully Logged In."};
+    send.send(JSON.stringify(payload));
+    console.log(payload)
+    send.onload = function () {
+        array2 = JSON.parse(send.responseText);
+        console.log(array2);
+    };
+
+
 }
