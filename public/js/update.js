@@ -14,5 +14,5 @@ function updateMe(){
     updateUser.send(JSON.stringify(payload));
     console.log(payload);
     alert("You have updated your profile");
-    window.location.href = "update-profile.html"
+    window.location.href = "index.html"
 }
