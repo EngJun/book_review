@@ -13,4 +13,6 @@ function updateMe(){
     var payload = {token:token, password:password, name:name, email:email};
     updateUser.send(JSON.stringify(payload));
     console.log(payload);
+    alert("You have updated your profile");
+    window.location.href = "update-profile.html"
 }
